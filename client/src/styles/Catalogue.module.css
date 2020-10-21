@@ -1,0 +1,130 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    min-height: 475px;
+    margin-top: 15px;
+    font-family: 'Verdana', sans-serif;
+}
+
+.products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 1000px;
+    margin-left: 20px;
+}
+
+.bar{
+    display: flex;
+    flex-direction: column;
+    margin-left: 18px;
+    color: #8087FF;
+    width: 300px;
+    height: auto;
+}
+
+.title{
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.subtitle{
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.select {
+    width: 200px;
+    height: 35px;
+    font-family: 'verdana', sans-serif;
+    color: #8087FF;
+    padding: 6px 10px;
+    font-size: 15px;
+    border: 0.5px solid #8087FF;
+    background-color: black;
+    transition: 0.3s;
+}
+
+.select:hover {
+    border-color: #8087FF;
+    border: 2px solid #5055b9;
+}
+
+.select:focus {
+    border: 2px solid #5055b9;
+    border-color: #472a7c;
+    box-shadow: 0 0 1px 1px #3b99fcb3;
+    outline: none;
+}
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.filterDiv{
+    height: 35px;
+} 
+
+.slide{
+    display: flex;
+    color:#8087FF;
+    font-size: 10px;
+}
+
+.buttonNext{
+    margin-top: 20px;
+    margin-left: 795px;
+    font-family: 'verdana', sans-serif;
+    color: #8087FF;
+    height: 46px;
+    font-size: 20px;
+    border: 0.5px solid #8087FF;
+    background-color: black;
+    transition: 0.1s;
+}
+
+.buttonPrev{
+    margin-top: 20px;
+    margin-left: 33px;
+    font-family: 'verdana', sans-serif;
+    color: #8087FF;
+    height: 46px;
+    font-size: 20px;
+    border: 0.5px solid #8087FF;
+    background-color: black;
+    transition: 0.1s;
+}
+
+.none{
+    display: flex;
+    color:#8087FF;
+    font-size: 25px;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+
+.buttonReset{
+    font-family: 'verdana', sans-serif;
+    color: #8087FF;
+    padding: 6px 15px;
+    font-size: 15px;
+    border: 0.5px solid #8087FF;
+    background-color: black;
+    transition: 0.3s;
+}
+
+.buttonReset:hover{
+    border: 2px solid #5055b9;
+}
+
+.buttonReset:focus{
+    border: 2px solid #5055b9;
+    border-color: #472a7c;
+    box-shadow: 0 0 1px 1px #3b99fcb3;
+    outline: none;
+}
