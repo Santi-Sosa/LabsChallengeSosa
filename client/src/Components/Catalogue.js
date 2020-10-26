@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "../styles/Catalogue.module.css";
-import ProductCard from "./ProductCard.js"
+import ProductCard from "./ProductCard.js";
 import axios from "axios";
 
 //Componente Catalogo
@@ -14,7 +14,6 @@ function Catalogue(props) {
   //Declaración de estados
   const [allProducts, setProducts] = useState([]);
   const [base, setBase] = useState([]);
-  const [selectPrice, setSelectPrice] = useState(0);
   const [slide, setSlide] = useState();
   const [pass, setPass] = useState(false);
 
@@ -56,20 +55,20 @@ function Catalogue(props) {
     .catch((err) => console.log(err));
   };
 
-  const orderPrice = () => {
-    var selected = document.getElementById("selectPrice").selectedIndex;
-    setSelectPrice(selected)
-    if(selected === 1){
+  const orderPrice = (evento) => {
+    const selected = evento.target.value;
+    if(selected == 1){
       //Menor a mayor
-      allProducts.sort(function(prev, next){
-        return prev.price - next.price;
-      })
-    }else if(selected === 2){
+      setProducts(base.sort(function(prev, next){
+        return prev.price - next.price
+      }))
+    }else if(selected == 2){
       //Mayor a menor
-      allProducts.sort(function(prev, next){
+      handleSearchBase(url);
+      setProducts(base.sort(function(prev, next){
         return next.price - prev.price;
-      })
-    }else if(selected === 0){
+      }))
+    }else if(selected == 0){
       handleSearch(url);
     }
   }
@@ -77,19 +76,16 @@ function Catalogue(props) {
   //Funciones de Filtros
   const filterNew = () => {
     setProducts(base.filter(product => product.condition === "new"));
-    document.getElementById("selectPrice").value = "0";
   }
 
   const filterUsed = () => {
     setProducts(base.filter(product => product.condition === "used"));
-    document.getElementById("selectPrice").value = "0";
   }
 
   //Función para paginar
-  const pages = () => {
+  const pages = (evento) => {
     setProducts(base);
-    var checkboxes = document.getElementById("checkbox").checked;
-    document.getElementById("selectPrice").value = "0";
+    var checkboxes = evento.target.checked;
     if(checkboxes){
       setProducts(allProducts.splice(0,30));
       setSlide([
@@ -147,7 +143,7 @@ function Catalogue(props) {
         </select>
         <label className={style.title}>Filtrar Resultados</label>
         <label className={style.subtitle}>Por condición:</label>
-        <form classname={style.filter}>
+        <form className={style.filter}>
           <div className={style.filterDiv}>
           <label><input type="radio" id="filtN" name="optradio" onChange={filterNew}/>Nuevo</label>
           </div>
@@ -157,7 +153,7 @@ function Catalogue(props) {
           <input type="reset" id="reset" className={style.buttonReset} value="Sacar filtros" onClick={outFilter}/>
         </form>
         <br/><br/><br/>
-        <label classname={style.page}><input type="checkbox" id="checkbox" onClick={pages} />Paginar de a 30 productos</label>
+        <label className={style.page}><input type="checkbox" id="checkbox" onClick={pages} />Paginar de a 30 productos</label>
       </div>
       <div>
         <div className={style.products}>

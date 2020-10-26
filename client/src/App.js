@@ -1,6 +1,4 @@
-import React/* , { useState } */ from 'react';
-/* import logo from './logo.svg'; */
-/* import style from './styles/App.module.css'; */
+import React from 'react';
 import { BrowserRouter, Route} from "react-router-dom";
 import Searchbar from "./Components/Searchbar.js";
 import Main from "./Components/Main";

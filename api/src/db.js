@@ -15,13 +15,13 @@ const basename = path.basename(__filename);
 //Arreglo de Modelos por si hay mas de uno
 const modelDefiners = [];
 
-// Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
+//Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
 fs.readdirSync(path.join(__dirname, "/models"))
   .forEach((file) => {
     modelDefiners.push(require(path.join(__dirname, "/models", file)));
   });
 
-// Injectamos la conexion sequelize a todos los modelos
+//Injectamos la conexion sequelize a todos los modelos
 modelDefiners.forEach((model) => model(sequelize));
 
 
