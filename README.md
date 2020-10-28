@@ -1,5 +1,5 @@
 # LabsChallengeSosa
 
-## Datos del proyecto
+## Datos del proyecto 
 
 Henry LabsChallenge Recuperatorio de Santiago Sosa - Cohorte 04.
