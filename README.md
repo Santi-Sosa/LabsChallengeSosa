@@ -2,4 +2,5 @@
 
 ## Datos del proyecto 
 
-Henry LabsChallenge Recuperatorio de Santiago Sosa - Cohorte 04.
+Proyecto Indiviual realizado por Santiago Sosa. Cohorte N°4. Bootcamp "Henry".
+
